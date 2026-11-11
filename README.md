@@ -1,5 +1,7 @@
 # Sticker Label Gun
 
+<img src="media/icon.png" alt="Sticker Label Gun icon" width="128" height="128">
+
 Buy the Sticker Label Gun in Modded Shop, then assign it in Equipment.
 
 ## Install

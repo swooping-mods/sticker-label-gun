@@ -1,3 +1,34 @@
-# Sticker Label Gun
+# Sticker Label Gun: behavior and implementation
 
-`source/` contains this mod and its included header dependencies. `build.json` selects the entry point and `build.py` uses installed tools. `provenance.json` records source hashes. `content/` contains the installable package or companion when available. Usage and compatibility belong in [README](../README.md).
+Describes the exported implementation **0.2.1**. The linked source and metadata define this version; gameplay qualification is a separate requirement.
+
+## Behavior
+
+Buy the $60 Sticker Label Gun, assign its Equipment slot and select it. Q cycles four designs, R places within eight meters, and Backspace removes the newest label. R avoids the vanilla E interaction. Collider-free sticker quads parent to the aimed surface, bounded at 128. The textured label dispenser appears only while equipped; native tool effects are suppressed through Equipment Framework.
+
+## State and lifecycle
+
+Ownership persists in the provider sidecar and quickslot IDs save natively. Placed labels, selected design and surface roots are local/session-only. Holster destroys the held instance while reusable mesh/texture resources remain; world teardown releases instances before shared resources. Partial model creation rolls back and retries with a bounded delay.
+
+## Integration and configuration
+
+Runtime dependencies: [shop-framework](https://github.com/swooping-mods/shop-framework), [equipment-framework](https://github.com/swooping-mods/equipment-framework), [hints-framework](https://github.com/swooping-mods/hints-framework).
+
+The [module metadata](../source/mods/sticker-label-gun/mod.json) owns the version and declared integration contract. Native modules start at `MoonLab_ModStart`. Game/Unity integrations target the pinned Steam Windows x64 IL2CPP build.
+
+| Service | ABI | Table size |
+|---|---:|---|
+| Requires `shop-framework.shop` | 1 | at least 56 bytes |
+| Requires `equipment-framework.equipment` | 1 | at least 32 bytes |
+| Requires `hints-framework.hints` | 1 | at least 24 bytes |
+
+## Implementation sources
+
+- [mod.c](../source/mods/sticker-label-gun/mod.c)
+- [tool_runtime.h](../source/mods/sticker-label-gun/tool_runtime.h)
+
+## Verification boundary
+
+No saved/shared stickers, arbitrary image loading or guest replication. Surface attachment, undo, native shader fit and rendered placement require gameplay qualification; purchase/equip checks alone do not cover them.
+
+`python3 build.py --check` verifies the exported source hashes. It does not execute the mod or qualify the behaviors above. Installation and independent build prerequisites are in the [README](../README.md).
