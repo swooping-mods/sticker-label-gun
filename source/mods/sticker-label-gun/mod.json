@@ -1,0 +1,34 @@
+{
+  "id": "sticker-label-gun",
+  "kind": "native",
+  "version": "0.2.1",
+  "display_name": "Sticker Label Gun",
+  "gameplay": true,
+  "feature_dependencies": [
+    "shop-framework",
+    "equipment-framework",
+    "hints-framework"
+  ],
+  "play_help": [
+    "Buy the Sticker Label Gun in Modded Shop, then assign it in Equipment.",
+    "Select its hotbar slot; Q cycles designs, R places a sticker and Backspace undoes.",
+    "Native shop/equipment integration implemented; gameplay testing deferred."
+  ],
+  "requires_apis": [
+    {
+      "api": "shop-framework.shop",
+      "abi": 1,
+      "min_size": 56
+    },
+    {
+      "api": "equipment-framework.equipment",
+      "abi": 1,
+      "min_size": 32
+    },
+    {
+      "api": "hints-framework.hints",
+      "abi": 1,
+      "min_size": 24
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "moon-generated-sticker-atlas/v1",
+  "generator": "Built-in image_gen tool",
+  "created": "2026-11-09",
+  "sha256": "53d5ff07df91dbf0f968c4d96cd9587e2b7785de839f427148b26d3accb0d6bc",
+  "layout": "Four square sticker tiles in a 2 by 2 atlas; no image edits or cropping",
+  "designs": [
+    {
+      "index": 0,
+      "label": "EAT MY DUST",
+      "uv_offset": [
+        0,
+        0.5
+      ]
+    },
+    {
+      "index": 1,
+      "label": "CERTIFIED MOON SWEEPER",
+      "uv_offset": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "index": 2,
+      "label": "NO DUST LEFT BEHIND",
+      "uv_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 3,
+      "label": "LUNAR CLEANUP CREW",
+      "uv_offset": [
+        0.5,
+        0
+      ]
+    }
+  ],
+  "style": "Slightly worn retro lunar sanitation industrial print; original generated art, no external game assets",
+  "qualification": "Image visually inspected; in-game texture/UV display is deferred."
+}

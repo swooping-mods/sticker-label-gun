@@ -1,0 +1,6 @@
+{
+  "schema": "moon-independent-build-spec/v1",
+  "id": "sticker-label-gun",
+  "kind": "native",
+  "entry": "mods/sticker-label-gun/mod.c"
+}
